@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" contesnt="width=device-width, initial-scale=1">
+<div id='AppendHere'></div>
+<title>Login</title>
+
+</head>
+
+    <body>
+      <div id="loginform" > 
+        <!--start header-->
+        <h1>LOG IN</h1>
+        <p><a href="#" > www.BookZen.com</a></p>
+
+    <div class="input-info">
+
+        <input type="text" placeholder="Username" id="usen"  required>
+
+
+        <input type="password" placeholder="Password" id="pass" s required>
+
+
+        <input type="checkbox">
+        <span>Remember Me</span><br>
+    </div>
+
+    <div class="log-sign"><!--the login button and the sign up button-->
+       <button class="login" form="loginform" id="loginbtn" onclick="login()">Log In</button><!--log in-->
+
+
+    </div><!--end of the log-sign-->
+
+    <div class="social-media">
+    <button class="btn1">
+    <a href="#" target="_blank"><i class="fa fa-facebook"></i> Sign up with facebook</a>
+    </button>
+
+    <button class="btn2">
+    <a href="#" target="_blank"><i class="fa fa-twitter"></i> Sign up with twitter</a>
+    </button>
+  </div>
+
+  <p class="forget-password">forgot your password? <a href="#">click here</a></p>
+  
+  <style type="text/css">
+  	
+* {box-sizing: border-box;}
+body {
+  background-image: url('mainbg.jfif');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family:sans-serif;
+}
+
+
+
+/*Start form style*/
+#loginform {
+  background-image: url('loginbg.jfif');
+  height: 500px;
+  width: 290px;
+  margin: 60px auto;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+}
+
+button{
+box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.58);
+}
+/*End form style*/
+
+
+
+/*****************************************/
+
+/*Start header*/
+#loginform h1 {
+  text-align: center;
+  color: white;
+  padding-top: 40px;
+}
+
+#loginform p {
+  color: white;
+  font-size: 15px;
+  text-align: center;
+  margin-top: -19px;
+}
+ /*The link of the site in the p tag ***/
+#loginform p>a{color:#ffffff;text-decoration: none;transition: 3s }
+#loginform p>a:hover{color: #ffffff}
+#loginform p>a:active{color: #ffffff }
+/*End login header*/
+
+
+/* Start the input-info style*/
+.input-info 
+{
+margin-top: 30px;margin-bottom: 15px
+}/*the containe div style*/
+
+input[type="text"],input[type="password"]  {
+    border: 1px solid white;
+    padding: 10px;
+    border-radius: 5px;
+    width: 87%;
+    background: none;
+    color: black;
+    margin: 5px 5px 5px 17px;
+    outline: none;
+    transition: 0.3s;
+    text-indent: 15px;
+    overflow: hidden;
+}
+ 
+
+.input-info input:hover{background: white}
+.input-info input[type="checkbox"] {margin-left: 17px;cursor: pointer;margin-top: 7px}
+.input-info span {color: #83899a;font-size: 11px;}
+.input-info span>a{color:#1da1f2 }
+.input-info span>a:hover{color:#fff }
+
+/*End the input-info style*/ 
+
+
+.log-sign{text-align: center;}/*the container div style*/
+.signup,
+.login{/*button login style*/
+    padding: 10px;
+    margin-top: 16px;
+    background: #49ACEC;
+    color: #ffffff;
+    width: 103px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.5s;
+    border: 1px solid #435688;
+    outline: none;
+}
+.signup {/*button signup style*/
+  background: #9e3434;
+  border: 1px solid #9e3434;
+}
+
+
+.log-sign .signup>a{color: #fff;text-decoration: none;}/*the signup link style*/
+.log-sign button:hover{
+   background:none;
+   border:1px solid #828999;
+   color: #fff;
+}
+
+.send{/*sugn up button at the signup.html page*/
+    padding: 10px;
+    margin-top: 16px;
+    background: #435688;
+    color: #fff;
+    width: 103px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.5s;
+    border: 1px solid #435688;
+    outline: none;
+    margin-left: 32%
+}
+
+
+/*facebook social-media button style*/
+.social-media{margin-bottom: 35px;}
+.social-media .btn1 {               /*facebook button*/
+  border: 0;
+  background: #3B5998;
+  color: #fff;
+  padding: 15px;
+  width: 90%;
+  margin-left: 16px;
+  margin-top: 14px;
+  border-radius: 5px;
+
+}
+.social-media .btn2 {                                 /*twitter button*/
+  border: 0;
+  padding: 15px;
+  margin-top: 11px;
+  width: 90%;
+  margin-left: 16px;
+  border-radius: 5px;
+  background: #1DA1F2;
+  color: #fff;
+
+}
+.social-media button>a{color: #fff;text-decoration: none;}
+
+.forget-password {text-align: center; color: black;}
+.forget-password a {color: blue  ;transition: black 3s;text-decoration:underline;}
+.forget-password a:hover{color: #1da1f2}
+.forget-password a:active{color: #1da1f2}
+  </style>
+ 
+ <script>
+    let uname,upass
+
+function login(){
+uname=document.getElementById("usen").value
+upass=document.getElementById("pass").value
+if(uname=="" || upass==""){
+window.alert("Enter Username or Password.");
+}else{
+
+
+if(uname=="User" && upass=="321"){
+location.href = "home.html";
+}else{
+window.alert("Invalid Login");
+}
+}
+}
+
+</script>
+</body>
+</form>
+</html>
